@@ -1,0 +1,2 @@
+Mon Feb 12 03:29:38 CET 2018 : Impossible d'écouter sur le port 1527, sur l'hôte localhost :
+ java.net.BindException: Adresse déjà utilisée (Bind failed)

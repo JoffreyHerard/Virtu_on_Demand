@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+        <ui:composition>
+
+
+
+            <div id="createVM" style="display: none;">
+
+                <b:row >
+                    <b:column medium-screen="4" offset="4">
+                        <b:panel class="login-panel" title="Create VM" collapsible="false">						
+                            <b:form role="form">
+                                <fieldset>
+                                    <input type="name" class="form-control" id="VMName" placeholder="Enter the name of new VM"/>
+                                    <div class="form-group">
+                                        <label for="VMType">Type of VM</label>
+                                        <select class="form-control" id="VMType">
+                                            <option value="debian">Debian</option>
+                                            <option value="ubuntu">Ubuntu</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="VMSpace">Space on disk</label>
+                                        <select class="form-control" id="VMSpace">
+                                            <option value="1">1Go</option>
+                                            <option value="2">2Go</option>
+                                            <option value="4">4Go</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="VMRAM">RAM</label>
+                                        <select class="form-control" id="VMRAM">
+                                            <option value="512">512Mo</option>
+                                            <option value="1024">1Go</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="VMConstructor">Constructor</label>
+                                        <select class="form-control" id="VMConstructor">
+                                            <option value="kvm">KVM</option>
+                                            <option value="qemu">QEMU</option>
+                                        </select>
+                                    </div>
+                                    <button id="buttonNewVM" class="btn btn-primary">Create VM</button>
+                                    <div id="errorVM"></div>
+                                </fieldset>
+                            </b:form>
+                        </b:panel>
+                    </b:column>
+                </b:row>
+
+            </div>
+
+            <div id="createContainer" style="display: none;">
+
+                <b:row >
+                    <b:column medium-screen="4" offset="4">
+                        <b:panel class="login-panel" title="Create container" collapsible="false">						
+                            <b:form role="form">
+                                <fieldset>
+
+                                    <input type="name" class="form-control" id="containerName" placeholder="Enter the name of new container"/>
+
+                                    <div class="form-group">
+                                        <label for="containerConstructor">Constructor</label>
+                                        <select class="form-control" id="containerConstructor">
+                                            <option value="docker">Docker</option>
+                                            <option value="lxc">LXC</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="containerTypeGroup">
+                                        <label for="containerType">Container type</label>
+                                        <input id="containerType" type="text" 
+                                               class="form-control" aria-describedby="emailHelp" 
+                                               placeholder="Enter container type" required="true"/>
+
+                                    </div>
+                                    <button id="buttonNewContainer" type="submit" class="btn btn-primary">Create container</button>
+                                    <div id="errorContainer"></div>
+
+                                </fieldset>
+                            </b:form>
+                        </b:panel>
+                    </b:column>
+                </b:row>
+
+            </div>
+
+            <ui:insert name="handleDevices" >
+                <ui:include src="../handleDevices.xhtml" />
+            </ui:insert>
+
+            <ui:insert name="noVNC" >
+                <ui:include src="../noVNC.xhtml" />
+            </ui:insert>
+        </ui:composition>
+    </h:body>
+</html>

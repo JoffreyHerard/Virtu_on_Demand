@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+
+        <ui:composition>
+            <!-- Navigation -->
+
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.xhtml">VM On Demand</a>
+                </div>
+                <!--/.navbar-header--> 
+
+                <ul class="nav navbar-top-links navbar-right">
+
+                    <!--/.dropdown--> 
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user " >
+                            <!--User is connected-->
+                            <c:if test="#{user.connected}">								
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i>#{user.name}</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="login.xhtml"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                </li>
+                            </c:if>
+
+                            <!--User isn't connected-->
+                            <c:if test="#{!user.connected}">								
+                                <li><a href="login.xhtml"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+                                </li>
+                            </c:if>
+                        </ul>
+                        <!--/.dropdown-user--> 
+                    </li>
+                    <!--/.dropdown--> 
+                </ul>
+                <!--/.navbar-top-links--> 
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+
+                        <ui:insert name="navbar_left" >
+                            <ul class="nav" id="side-menu">
+                                <li>
+                                    <a href="#"><i class="fa fa-plus fa-fw"></i> Create<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level">
+                                        <li>
+                                            <a onClick='
+                                                document.getElementById("createContainer").style.display = "none";
+                                                document.getElementById("handleDevices").style.display = "none";
+                                                document.getElementById("createVM").style.display = "block";
+                                                document.getElementById("noVNC").style.display = "none";'
+                                               >
+                                                VM
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onClick='
+                                                document.getElementById("createContainer").style.display = "block";
+                                                document.getElementById("handleDevices").style.display = "none";
+                                                document.getElementById("createVM").style.display = "none";
+                                                document.getElementById("noVNC").style.display = "none";'
+                                               >
+                                                Container
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!--/.nav-second-level--> 
+                                </li>
+                                <li>
+                                    <a href="#" onClick='
+                                                document.getElementById("createContainer").style.display = "none";
+                                                document.getElementById("handleDevices").style.display = "block";
+                                                document.getElementById("createVM").style.display = "none";
+                                                document.getElementById("noVNC").style.display = "none";'
+                                    >                
+                                        <i class="fa fa-file fa-fw"></i> Handle
+                                    </a>
+                                    <!--/.nav-second-level--> 
+                                </li>
+                                
+                                <li>
+                                    <a href="#" onClick='
+                                                document.getElementById("createContainer").style.display = "none";
+                                                document.getElementById("handleDevices").style.display = "none";
+                                                document.getElementById("createVM").style.display = "none";
+                                                document.getElementById("noVNC").style.display = "block";'
+                                    >                
+                                        <i class="fa fa-file fa-fw"></i> noVNC
+                                    </a>
+                                    <!--/.nav-second-level--> 
+                                </li>
+
+
+                            </ul>
+                        </ui:insert>
+                    </div>
+                    <!--/.sidebar-collapse--> 
+                </div>
+                <!--/.navbar-static-side--> 
+            </nav>
+
+        </ui:composition>
+    </h:body>
+</html>

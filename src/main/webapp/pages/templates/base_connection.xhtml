@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"	  
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+
+		<title>
+			<ui:insert name="title" >Page</ui:insert> | VMOnDemand
+		</title>
+
+		<!-- Bootstrap Core CSS -->
+		<h:outputStylesheet name="/vendor/bootstrap/css/bootstrap.min.css"/>
+		<!--<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>-->
+
+		<!-- MetisMenu CSS -->
+		<h:outputStylesheet name="/vendor/metisMenu/metisMenu.min.css"/>
+		<!--<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet"/>-->
+
+		<!-- Custom CSS -->
+		<h:outputStylesheet name="/sbAdmin/sb-admin-2.css" library="css"/>
+		<!--<link href="../dist/css/sb-admin-2.css" rel="stylesheet"/>-->
+
+		<!-- Custom Fonts -->
+		<h:outputStylesheet name="/vendor/font-awesome/css/font-awesome.min.css"/>
+		
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</h:head>
+	<h:body>
+		<b:container>
+			<b:row >
+				<b:column medium-screen="4" offset="4">
+					<b:panel class="login-panel" title="#{titleForm}" collapsible="false">						
+						<b:form role="form">
+							<fieldset>
+								<ui:insert name="content" ></ui:insert>
+							</fieldset>
+						</b:form>
+					</b:panel>
+				</b:column>
+			</b:row>
+		</b:container>
+
+		<!-- jQuery -->
+		<script src="../vendor/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Metis Menu Plugin JavaScript -->
+		<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+		<!-- Custom Theme JavaScript -->
+		<script src="../dist/js/sb-admin-2.js"></script>
+
+	</h:body>
+</html>

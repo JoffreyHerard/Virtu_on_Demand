@@ -1,0 +1,28 @@
+Verifier la configuration réseaux
+
+LXC : 
+
+
+préparer un bridge :
+
+exemple de configuration possible 
+
+auto vmbr0
+iface vmbr0 inet dhcp
+        bridge_ports eth0
+        bridge_fd 0
+        bridge_maxwait 0
+
+# Décommentez ci-dessous  et commentez ci-dessus pour avoir une ip statique sur l’hôte
+#auto vmbr0
+#iface vmbr0 inet static
+#       bridge_ports eth0
+#       bridge_fd 0
+#       address < IP de l’hôte ici, exemple: 192.168.1.20>
+#       netmask 255.255.255.0
+#       network <IP du réseau ici, exemple: 192.168.1.0>
+#       broadcast <IP de broadcast ici, exemple: 192.168.1.255>
+#       gateway <IP de la passerelle ici, exemple: 192.168.1.1>
+#       # les options dns-* sont implémentées par le paquet resolvconf package, si installé
+#       dns-nameservers <Adresse IP du DNS ici, exemple: 192.168.1.1>
+#       dns-search votre.domaine.de.Recherche.ici

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <h:body>
+
+        <ui:composition template="templates/base_pages.xhtml">
+
+            <ui:define name="title">
+                Handle containers
+            </ui:define>
+
+            <!--User isn't connected-->
+            <c:if test="#{!user.connected}">				
+                <ui:define name="navbar_left">
+                </ui:define>
+
+                <ui:define name="content_title">
+                    Not connected
+                </ui:define>
+
+                <ui:define name="content">
+                    <h1>You're not connected, so you can't use this page</h1>
+                </ui:define>
+            </c:if>	
+
+            <!--User is connected-->
+            <c:if test="#{user.connected}">
+                <ui:define name="content">
+                    TEST
+                </ui:define>
+<!--                <ui:define name="content_title">
+                    Handle containers
+                </ui:define>
+                <ui:define name="available_title">
+                    Available containers
+                </ui:define>                    
+                <ui:define name="available_content">
+                    Available container
+                </ui:define>
+
+                <ui:define name="launched_title">
+                    Launched containers
+                </ui:define>                    
+                <ui:define name="launched_content">
+                    Launched container
+                </ui:define>-->
+            </c:if>
+
+        </ui:composition>
+    </h:body>
+
+</html>
+

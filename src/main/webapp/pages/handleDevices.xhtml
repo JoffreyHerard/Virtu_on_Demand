@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+        <ui:composition>
+            <div id="handleDevices" style="display: block;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    VMs / Containers 
+                                </div>                                
+                                <div class="col-lg-2">
+                                    <a class="btn btn-primary" href="" role="button">Refresh page</a>
+                                </div>
+                            </div>
+                        </h1>
+                    </div>
+                    <!--/.col-lg-12--> 
+                </div>
+                <!--/.row--> 
+
+                <!--/.row--> 
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-file-o fa-fw"></i> VM List
+
+                            </div>
+                            <!--/.panel-heading--> 
+                            <div class="panel-body">
+                                <div id="handlingVMList"></div>
+                            </div>
+                            <!--/.panel-body--> 
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-file-o fa-fw"></i> Container List
+
+                            </div>
+                            <!--/.panel-heading--> 
+                            <div class="panel-body">
+                                
+                                <div id="handlingContainerList"></div>
+
+
+                                <div id="newUserContainer">
+                                    <div class="form-group">
+                                        <label for="userVM">User name</label>
+                                        <input type="email" class="form-control" id="userContainer" placeholder="Enter the name of new user"/>           
+                                        <input type="password" class="form-control" id="passwordContainer" placeholder="Enter the password of new user"/>                                
+                                    </div>
+                                    <button id="buttonNewUserContainer" type="submit" class="btn btn-primary">Add user</button>
+                                    <div id="errorNewUserContainer"></div>
+                                </div>
+
+                            </div>
+                            <!--/.panel-body--> 
+                        </div>
+
+                    </div>
+                </div>
+                <!--/.row--> 
+            </div>
+        </ui:composition>
+    </h:body>
+</html>

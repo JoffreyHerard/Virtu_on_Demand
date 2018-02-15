@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}  
+\usepackage[T1]{fontenc}
+
+\usepackage{helvet}
+\usepackage{titlesec}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tabu}
+\usepackage{url}
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{INFO0921: VM à la demande}
+\fancyhead[R]{URCA}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{HERARD Joffrey\\ PLUOT Emmanuel \\ DERNIAME Alexandre \\ POIRIER Stéphane}
+\fancyfoot[C]{
+\textbf{Page \thepage/\pageref{LastPage}}}
+\fancyfoot[R]{2017-2018}
+
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+\renewcommand{\lstlistingname}{Algorithme}
+\newenvironment{strechpage}[1][0cm]{%
+	\newpage\vspace*{#1}\leavevmode\noindent\centering
+	\def\tempdimen{#1}%
+	\begin{minipage}{\dimexpr\linewidth-#1-#1\relax}}%
+	{\end{minipage}\vspace*\tempdimen\newpage}
+
+\titleformat{\chapter}[display]
+  {\centering\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
+  
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+
+\newtheorem{ask}{Question}
+\begin{document}
+ \makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+   \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\Huge \@title\par}%
+    \vskip 3cm
+    {\Large \@author\par}%
+    \vskip 1cm
+    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\title{\begin{center}Projet d'INFO0921:\end{center} Machines virtuelles à la demande}
+\author{ Joffrey HÉRARD, Emmanuel PLUOT, Alexandre DERNIAME, Stéphane POIRIER
+\begin{center}Responsable : Olivier FLAUZAC\end{center}}
+\date{2017-2018}
+\maketitle 
+ 
+\tableofcontents 
+\newpage
+\section{Cahier des charges}
+\newpage
+\section{Choix sur les techniques et technologies existantes}
+\newpage
+\section{Modélisation de l'application}
+\subsection{Les échanges}
+\subsubsection{Forme des échanges}
+\subsubsection{Diagrammes des échanges}
+\subsection{UML}
+\subsection{Les données}
+\subsection{Les erreurs}
+
+\newpage
+\section{Front-end}
+\newpage
+\section{Back-end}
+\subsection{Base de données}
+\subsubsection{Table Users}
+\subsubsection{Table Virtual\_machines}
+\subsection{Servlet de la gestion des machines}
+\subsection{Interface et classes java}
+\subsubsection{IVirtualization}
+\subsubsection{LXC, Docker}
+\subsubsection{QEMU, KVM}
+
+\subsection{Journalisatioh des accès}
+\end{document}

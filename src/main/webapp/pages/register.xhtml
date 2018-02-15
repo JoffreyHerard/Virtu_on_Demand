@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:body>
+		<ui:composition template="templates/base_connection.xhtml">
+			<ui:param name="titleForm" value ="Register" />
+
+			<ui:define name="title">
+				Register page
+			</ui:define>
+
+
+			<ui:define name="content">
+				<b:formGroup>
+					<b:inputText  class="form-control" 
+								  id="name" 
+								  value="#{user.name}" 
+								  requiredMessage="Please, fill this field"
+								  placeholder="Login" 
+								  fieldId="j_username" 
+								  name="j_username" 
+								  label="Name"
+								  required="true"/>
+					<b:message for="@previous" />
+				</b:formGroup>
+				<b:formGroup>
+					<b:inputSecret id="password" 
+								   value="#{user.password}" 
+								   fieldId="j_password" 
+								   requiredMessage="Please, fill this field"
+								   name="j_password" 
+								   label="Password" 
+								   required="true"/>
+					<b:message for="@previous" />
+				</b:formGroup>
+				<b:formGroup>
+					<b:inputText placeholder =				"docker@lxc.fr" 
+								 id =						"email" 
+								 value =					"#{user.email}" 
+								 fieldId =					"j_email" 
+								 requiredMessage =			"Please, fill this field"
+								 validatorMessage =			"Invalid email format"
+								 name =						"j_email" 
+								 label =					"E-Mail" 
+								 required =					"true"
+					>
+						<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+					</b:inputText>
+					<b:message for="email" />
+				</b:formGroup>
+
+				<b:commandButton look="success" class="btn-lg btn-block" action="#{user.register}" value="Login"/>
+
+			</ui:define>
+
+		</ui:composition>
+
+	</h:body>
+</html>
